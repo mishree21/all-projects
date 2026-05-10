@@ -1,0 +1,59 @@
+<div class="home">
+
+<h2>Welcome {{username}}</h2>
+
+<!-- Search Section -->
+<div class="search-box">
+
+<input type="text" ng-model="searchBus" placeholder="Search Bus Number">
+
+<input type="text" ng-model="source" placeholder="Enter Source">
+
+<input type="text" ng-model="destination" placeholder="Enter Destination">
+
+<button ng-click="findBus()">Find Bus</button>
+
+</div>
+
+<br>
+
+<!-- Bus Table -->
+<table border="1" width="100%">
+
+<tr>
+<th>Bus Number</th>
+<th>Helper</th>
+<th>Contact</th>
+<th>Stops</th>
+<th>Seats Available</th>
+</tr>
+
+<tr ng-repeat="bus in filteredBuses | filter:searchBus">
+
+<td>
+<a href="#!/bus/{{bus.number}}">
+{{bus.number}}
+</a>
+</td>
+
+<td>{{bus.helper}}</td>
+
+<td>{{bus.contact}}</td>
+
+<td>
+<span ng-repeat="stop in bus.stops">
+{{stop}}{{$last ? '' : ' → '}}
+</span>
+</td>
+
+<td>{{bus.seats}}</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<a href="#!/">Logout</a>
+
+</div>
