@@ -1,0 +1,82 @@
+<div class="bus-details">
+
+<h2>🚌 Bus Details</h2>
+
+<div class="card">
+
+<h3>Bus Number : {{bus.number}}</h3>
+
+<p><b>Helper :</b> {{bus.helper}}</p>
+
+<p><b>Contact :</b> {{bus.contact}}</p>
+
+<p><b>Seats Available :</b> {{bus.seats}}</p>
+
+<button ng-click="bookSeat()" class="book-btn">
+🎟 Book Seat
+</button>
+
+
+
+<!-- Ticket Section -->
+
+<h3>🎫 Bus Ticket</h3>
+<div class="ticket" ng-if="ticket">
+
+
+
+<p><b>Passenger :</b> {{ticket.passenger}}</p>
+<p><b>Bus Number :</b> {{ticket.bus}}</p>
+<p><b>Seat Number :</b> {{ticket.seat}}</p>
+<p><b>Route :</b> {{ticket.route}}</p>
+
+<button ng-click="downloadPDF()" class="pdf-btn">
+📄 Download Ticket PDF
+</button>
+
+</div>
+
+<p><b>Passenger :</b> {{ticket.passenger}}</p>
+
+<p><b>Bus Number :</b> {{ticket.bus}}</p>
+
+<p><b>Seat Number :</b> {{ticket.seat}}</p>
+
+<p><b>Route :</b> {{ticket.route}}</p>
+
+</div>
+
+
+<!-- Call Helper Button -->
+<a href="tel:{{bus.contact}}" class="call-btn">📞 Call Helper</a>
+
+<h4>Route Timeline</h4>
+
+<div class="timeline">
+
+<div class="stop" ng-repeat="stop in bus.stops">
+
+<div class="circle"></div>
+
+<div class="stop-name">
+{{stop}}
+</div>
+
+</div>
+
+</div>
+<h4>Route Map</h4>
+
+<div class="map-container">
+<iframe
+ng-src="{{mapUrl}}"
+loading="lazy">
+</iframe>
+</div>
+<br><br>
+
+<a href="#!/home" class="back-btn">⬅ Back to Home</a>
+
+</div>
+
+</div>

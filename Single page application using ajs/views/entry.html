@@ -1,0 +1,26 @@
+<div class="form-container">
+
+<h2>Enter Your Details</h2>
+
+<form ng-submit="enterSite()">
+
+<label>Name</label>
+<input type="text" ng-model="user.name" required>
+
+<label>Mobile Number</label>
+<input type="text" ng-model="user.mobile" required>
+
+<label>City</label>
+<input type="text" ng-model="user.city" required>
+
+<label>Select Role</label>
+<select ng-model="user.role" required>
+<option value="user">User</option>
+<option value="admin">Admin</option>
+</select>
+
+<button type="submit">Enter Website</button>
+
+</form>
+
+</div>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Vendor Track Notifier</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f7f7f7;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #e6e6e6;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #1f3c88;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: green;
+        }
+
+        /* Main section */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+        }
+
+        .left {
+            width: 50%;
+        }
+
+        .title {
+            font-size: 45px;
+            font-weight: bold;
+            color: #002060;
+        }
+
+        .subtitle {
+            color: #2e4a3b;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            background: #00a651;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+
+        .btn:hover {
+            background: #008c46;
+        }
+
+        .right img {
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <img src="image copy.png" width="60">  <!-- optional logo -->
+        
+        <div>
+            <a href="index.php">Home</a>
+            <a href="about.php">About us</a>
+            <a href="contact.php">Contact</a>
+        </div>
+    </div>
+
+    <!-- MAIN PAGE CONTENT -->
+    <div class="container">
+        <div class="left">
+            <div class="title">Welcome to<br>Vendor Track Notifier</div>
+            <div class="subtitle">
+                A secure Web-based System to manage vendor entry <br>
+                in residential societies
+            </div>
+
+            <br><br>
+
+            <a class="btn" href="vendor_registration.php">Register Vendor</a>
+            <a class="btn" href="security_login.php">Login as Security</a>
+            <a class="btn admin" href="admin_login.php">Admin Panel</a>
+
+        </div>
+
+        <div class="right">
+            <img src="image.png">
+        </div>
+    </div>
+
+</body>
+</html>
