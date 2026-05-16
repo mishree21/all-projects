@@ -1,0 +1,58 @@
+<div class="admin">
+
+<h2>Admin Panel - Manage Buses</h2>
+
+<form ng-submit="addBus()">
+
+<input type="text" ng-model="newBus.number" placeholder="Bus Number" required>
+
+<input type="text" ng-model="newBus.helper" placeholder="Helper Name" required>
+
+<input type="text" ng-model="newBus.contact" placeholder="Contact" required>
+
+<input type="number" ng-model="newBus.seats" placeholder="Available Seats" required>
+
+<input type="text" ng-model="newBus.stops" placeholder="Stops (comma separated)" required>
+
+<button type="submit">Add Bus</button>
+
+</form>
+
+<br>
+
+<h3>Bus List</h3>
+
+<table border="1" width="100%">
+
+<tr>
+<th>Bus</th>
+<th>Helper</th>
+<th>Contact</th>
+<th>Seats</th>
+<th>Action</th>
+</tr>
+
+<tr ng-repeat="bus in buses">
+
+<td>{{bus.number}}</td>
+
+<td>{{bus.helper}}</td>
+
+<td>{{bus.contact}}</td>
+
+<td>{{bus.seats}}</td>
+
+<td>
+<button ng-click="editBus($index)">Edit</button>
+<button ng-click="deleteBus($index)">Delete</button>
+</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<a href="#!/home">⬅ Back to Home</a>
+
+</div>

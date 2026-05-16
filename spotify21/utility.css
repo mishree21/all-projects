@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.border{
+    border: 2px solid red;
+    margin: 3px;
+}
+
+.flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.items-center{
+    align-items: center;
+}
+ 
+.bg-black{
+    background-color: black;
+    color: white;
+}
+
+.invert{
+    filter: invert(1);
+}
+
+.bg-grey{
+    background-color: #121212;
+}
+
+.rounded{
+    border-radius: 7px;
+}
+
+.m-1{
+    margin: 5px;
+} 
+
+.p-1{
+  padding: 10px; 
+  size: 10px; 
+}
+
+/* Scrollbar for Webkit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 10px; /* Width of vertical scrollbar */
+    height: 10px; /* Height of horizontal scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Track background */
+    border-radius: 10px; /* Optional: Rounded edges */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #333333; /* Scrollbar color */
+    border-radius: 10px; /* Rounded edges */
+    border: 2px solid #1a1a1a; /* Gives a little space around the thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555555; /* Color on hover */
+  }
+  
+  /* Firefox Scrollbar (Newer versions) */
+  * {
+    scrollbar-width: thin; /* Options: auto, thin, none */
+    scrollbar-color: #333333 #1a1a1a; /* thumb color, track color */
+  }
+  
+  /* Optional: Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
