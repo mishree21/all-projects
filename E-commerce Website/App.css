@@ -1,0 +1,963 @@
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #218a49, #144920);;
+  color: white;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  cursor: pointer;
+   color: white;
+}
+
+/* ================= NAV BUTTONS ================= */
+/* ================= FINAL HEADER BUTTON FIX ================= */
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* BUTTON DESIGN */
+.nav-buttons button {
+  background-color: linear-gradient(135deg, #20914b, #346740);
+
+  color: black !important;
+
+  border: none !important;
+
+  padding: 10px 18px !important;
+
+  border-radius: 8px !important;
+
+  font-size: 15px !important;
+
+  font-weight: 500 !important;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* HOVER EFFECT */
+.nav-buttons button:hover {
+  background-color: linear-gradient(135deg, #218a49, #144920);
+
+  transform: translateY(-2px);
+}
+
+/* CLICK EFFECT */
+.nav-buttons button:active {
+  transform: scale(0.96);
+}
+
+/* ================= CATEGORIES ================= */
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.categories button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #218a49, #144920);;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.categories button:hover {
+  background: rgb(58, 85, 58);
+}
+
+/* ================= PRODUCTS GRID ================= */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ================= PRODUCT CARD ================= */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ✅ FIXED IMAGE (MAIN FIX) */
+.card img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;   /* prevents zoom issue */
+  border-radius: 10px;
+  background: #f7f7f7;
+}
+
+/* ================= BUTTON ================= */
+.card .card-btn {
+  margin-top: 10px;
+  width: auto;
+  padding:  10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #218a49, #144920);;
+  color: white;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: rgb(58, 85, 58);
+}
+
+/* ================= CART PAGE ================= */
+.cart-page {
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+
+
+/* ================= TOTAL BOX ================= */
+.total-box {
+  margin-top: 15px;
+  padding: 15px;
+  background: green;
+  color: white;
+  border-radius: 10px;
+  text-align: right;
+}
+
+/* ================= LOGIN PAGE ================= */
+/* ================= LOGIN PAGE ================= */
+
+.login-wrapper {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #218a49, #144920);
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* BACKGROUND ANIMATION */
+.login-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: rgb(231, 234, 207);
+
+  border-radius: 50%;
+
+  top: -120px;
+  left: -120px;
+
+  animation: float 6s ease-in-out infinite;
+}
+
+.login-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+  background: rgb(231, 234, 207);
+
+  border-radius: 50%;
+
+  bottom: -100px;
+  right: -100px;
+
+  animation: float 8s ease-in-out infinite;
+}
+
+/* CARD */
+.login-card {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 400px;
+
+  background: rgba(255,255,255,0.95);
+
+  backdrop-filter: blur(10px);
+
+  padding: 35px 30px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+
+  animation: fadeUp 0.8s ease;
+}
+
+/* TITLE */
+.login-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+
+  color: #111;
+
+  animation: slideDown 0.8s ease;
+}
+
+/* SUBTITLE */
+.login-subtitle {
+  color: gray;
+  margin-bottom: 25px;
+  font-size: 15px;
+
+  animation: fadeIn 1s ease;
+}
+
+/* INPUT */
+.login-input {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition: all 0.3s ease;
+}
+
+/* INPUT FOCUS */
+.login-input:focus {
+  border-color: #51a788;
+
+  box-shadow: 0 0 12px rgba(110, 220, 167, 0.3);
+
+  transform: scale(1.02);
+}
+
+/* PASSWORD BOX */
+.password-box {
+  position: relative;
+}
+
+/* EYE ICON */
+.eye-icon {
+  position: absolute;
+
+  right: 15px;
+  top: 38%;
+
+  transform: translateY(-50%);
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.3s;
+}
+
+.eye-icon:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #11300f, #3ea52e);
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  animation: fadeIn 1.2s ease;
+}
+
+/* BUTTON HOVER */
+.login-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  box-shadow: 0 10px 20px rgba(108,99,255,0.3);
+}
+
+/* BUTTON CLICK */
+.login-btn:active {
+  transform: scale(0.97);
+}
+
+/* ================= ANIMATIONS ================= */
+
+/* CARD ENTRY */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FLOATING BG */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* TITLE */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FADE */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+  .login-card {
+    padding: 25px 20px;
+  }
+
+  .login-title {
+    font-size: 28px;
+  }
+
+}
+
+/* ================= ERROR ================= */
+.error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+ .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: #fff;
+  padding: 10px;
+}
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px;
+  }
+
+  .login-title {
+    font-size: 18px;
+  }
+
+  .nav-buttons button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ================= WISHLIST ================= */
+.card-wrapper {
+  position: relative;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  z-index: 10;
+
+  background: white;
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  font-size: 20px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+
+  transition: 0.2s;
+}
+
+.wishlist-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ================= ADS ================= */
+.ads-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.ad-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.ad-card:hover {
+  transform: translateY(-5px);
+}
+
+.ad-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.ad-card h3 {
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+}
+
+/* ================= SEARCH BAR ================= */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  width: 60%;
+  max-width: 500px;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.search-bar input:focus {
+  border-color: #ff4d6d;
+  box-shadow: 0 4px 12px rgba(255, 77, 109, 0.2);
+  transform: scale(1.02);
+}
+
+/* optional placeholder styling */
+.search-bar input::placeholder {
+  color: #999;
+}
+
+.search-bar input {
+  background: #fff;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 85%;
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    margin: 15px 5px;
+  }
+
+  .search-bar input {
+    width: 95%;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 20px;
+  }
+}
+
+/* ADS */
+.ads-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 20px;
+}
+
+.ad-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.ad-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.ad-card h3 {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.ad-card:hover {
+  transform: scale(1.03);
+}
+
+/* CATEGORY TITLE */
+.category-title {
+  margin: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  border-left: 5px solid #ff4d6d;
+  padding-left: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .ads-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-detail {
+  padding: 20px;
+}
+
+.back-btn {
+  padding: 10px 15px;
+  border: none;
+  background:linear-gradient(135deg, #218a49, #144920);;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.product-detail-card {
+  display: flex;
+  gap: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.product-detail-card img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-info h1 {
+  margin-bottom: 10px;
+}
+
+.product-info h2 {
+  color: black;
+}
+
+.add-btn {
+  padding: 10px 20px;
+  background:linear-gradient(135deg, #218a49, #144920); ;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .product-detail-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-detail-card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.card {
+  position: relative;
+}
+
+/* ❤️ HEART ICON STYLE */
+.wishlist-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background: white;
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+  transition: 0.2s;
+}
+
+.wishlist-heart:hover {
+  transform: scale(1.1);
+}
+
+.cart .remove-btn {
+  all: unset;
+
+  display: inline-block;
+
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  background: #e53935;
+  color: white;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.cart .remove-btn:hover {
+  background: #c62828;
+  transform: scale(1.05);
+}
+
+/* ================= PLACE ORDER ================= */
+
+.place-order-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg, #218a49, #144920);
+
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.place-order-btn:hover {
+  transform: scale(1.03);
+}
+
+/* ================= ORDERED BUTTON ================= */
+
+.ordered-btn {
+  margin-top: 10px;
+
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: linear-gradient(135deg, #218a49, #144920);
+  color: white;
+
+  font-size: 14px;
+}
+
+/* ================= ORDER BUTTONS ================= */
+
+.order-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ================= CANCEL BUTTON ================= */
+
+.cancel-btn {
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: crimson;
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  transform: scale(1.05);
+  background: darkred;
+}
+
+/* ================= CHECKOUT ================= */
+
+.checkout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.checkout-box {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 15px;
+
+  width: 90%;
+  max-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  animation: popup 0.3s ease;
+}
+
+.checkout-box input {
+  padding: 12px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  font-size: 15px;
+}
+
+.confirm-btn {
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: green;
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.close-btn {
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: crimson;
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== CART ===== */
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  background: white;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.qty-box button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
